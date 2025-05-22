@@ -184,8 +184,8 @@ manifest/
 ### 🎥 Demo Video
 [<img src="demo_thumbnail.png" width="50%">](demo_video_link)
 
-Bu 2 dakikalık demo video:
-- Web arayüzünün kullanımı
+Bu 2 dakikalık demo video: https://youtu.be/sLGqP6V0fy8
+- simülasyonun gösterimi
 - Mobil uygulamanın kurulumu
 - Gerçek zamanlı analiz örneği
 - API entegrasyonu
