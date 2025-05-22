@@ -1,34 +1,91 @@
 # MANIFEST
-# Ped Kalite Kontrol Sistemi
+
+## 🎯 Ped Kalite Kontrol Sistemi
 
 Ped üretim hattında kalite kontrol için yapay zeka destekli görüntü işleme sistemi. Sistem, web arayüzü ve mobil uygulama olmak üzere iki bileşenden oluşmaktadır.
 
----
+### 🌟 Özellikler
 
-## 🌟 Özellikler
-
-### Web Arayüzü
+#### Web Arayüzü
 - 📸 Gerçek zamanlı kamera analizi
 - 📊 Detaylı performans metrikleri
 - 🚀 Hızlı işlem süresi (~203ms)
 - 📈 Karmaşıklık analizi
 - 🔄 REST API desteği
 
-### Mobil Uygulama
+#### Mobil Uygulama
 - 📱 Android platformu desteği
 - 📸 Kamera entegrasyonu
 - 🔄 Gerçek zamanlı analiz
 - 💾 Yerel depolama
 - 📊 Analiz geçmişi
 
----
+### ⚡ Performans Analizi
 
-## 📋 Gereksinimler
+#### Karmaşıklık Notasyonu
+- Zaman Karmaşıklığı: O(n²)
+  - CNN katmanları için matris işlemleri
+  - 224x224 görüntü boyutu işleme
+- Mekân Karmaşıklığı: O(n)
+  - Model parametreleri
+  - Görüntü tamponu
+ 
+  ### 🔬 Model Karmaşıklığı Detayları
 
-### Bağımlılıklar
+Görüntü işleme sürecinde kullanılan algoritmik modeller:
+- Derin öğrenme tabanlı CNN mimarisi (ResNet50V2)
+- Çok aşamalı görsel analiz yapıları
+- Kenar tespiti sonrası sınıflandırma sistemleri
 
-`requirements.txt` içeriği:
-```plaintext
+#### Algoritma Karmaşıklığı
+- Görüntü ön işleme: O(n)
+- CNN işlemleri: O(n²)
+- Sınıflandırma: O(1)
+- Toplam karmaşıklık: O(n²)
+
+#### Bellek Kullanımı
+- Model boyutu: ~98MB
+- Çalışma zamanı belleği: ~256MB
+- Görüntü tamponu: ~2MB/frame
+
+#### FPS Ölçümü
+- Test Süresi: 1 dakika
+- İşlenen Görüntü Sayısı: 295 frame
+- Ortalama FPS: 4.92
+- Test Cihazı: Mobil kamera (1080p)
+
+#### Model Performansı
+- Doğruluk: %100
+- Hassasiyet: %100
+- F1-Score: %100
+- İşlem Süresi: ~203ms/frame
+
+#### API Performansı
+- Ortalama yanıt süresi: 250ms
+- Maksimum eşzamanlı istek: 100/dk
+- Başarı oranı: %99.9
+
+### 🛠️ Teknolojiler
+
+#### Web Arayüzü
+- Python 3.8+
+- TensorFlow 2.15.0
+- Streamlit 1.29.0
+- FastAPI
+- OpenCV
+
+#### Mobil Uygulama
+- Flutter
+- Dart
+- HTTP paketi
+- Image Picker
+- Shared Preferences
+
+### 📋 Gereksinimler
+
+#### Bağımlılıklar
+python
+requirements.txt
 streamlit==1.29.0
 tensorflow==2.15.0
 opencv-python==4.8.1
@@ -38,221 +95,105 @@ fastapi==0.109.0
 uvicorn==0.27.0
 python-multipart==0.0.6
 
-🛠️ Teknolojiler
-Web Arayüzü
-Python 3.8+
 
-TensorFlow 2.15.0
 
-Streamlit 1.29.0
+#### Simülasyon Ortamı
+1. Python 3.8+ kurulu olmalı
+2. Kamera erişimi olan bir cihaz
+3. En az 4GB RAM
+4. CUDA destekli GPU (opsiyonel)
 
-FastAPI
+#### Mobil Uygulama Gereksinimleri
+1. Flutter SDK
+2. Android Studio / VS Code
+3. Android 6.0+ cihaz
+4. USB Debugging açık olmalı
 
-OpenCV
+#### Kamera Özellikleri
+- Desteklenen Kamera Türleri:
+  - Mobil cihaz kamerası
+  - Bilgisayar web kamerası
+- Minimum Çözünürlük: 720p
+- Önerilen Çözünürlük: 1080p
+- FPS Değeri: 4.92 FPS
 
-Mobil Uygulama
-Flutter
+### ⚙️ Kurulum Talimatları
 
-Dart
+#### Web Arayüzü & API
+1. Repoyu klonlayın
+2. Python bağımlılıklarını yükleyin:
+   bash
+pip install -r requirements.txt
+3. API'yi başlatın:
+   bash
+python api.py
+4. Web arayüzünü başlatın:
+   bash
+streamlit run app.py
 
-HTTP paketi
 
-Image Picker
+#### Mobil Uygulama
+1. Flutter SDK'yı yükleyin
+2. Proje dizinine gidin
+3. Bağımlılıkları yükleyin:
+ bash
+flutter pub get
+4. API adresini `lib/config.dart` dosyasında güncelleyin
+5. Uygulamayı başlatın:
+   bash
+flutter run
 
-Shared Preferences
+### 🔗 API Kullanımı
 
-📊 Performans Metrikleri
-Model Performansı
-Doğruluk: %99.89
-
-F1-Score: %98.78
-
-İşlem Süresi: ~203ms/frame
-
-API Performansı
-Ortalama yanıt süresi: 250ms
-
-Maksimum eşzamanlı istek: 100/dk
-
-Başarı oranı: %99.9
-
-⚡ Performans Analizi
-Zaman Karmaşıklığı: O(n²)
-CNN katmanları için matris işlemleri, 224x224 görüntü boyutu işleme
-
-Mekân Karmaşıklığı: O(n)
-Model parametreleri, görüntü tamponu
-
-FPS Ölçümü
-Test Süresi: 1 dakika
-
-İşlenen Görüntü Sayısı: 295 frame
-
-Ortalama FPS: 4.92
-
-Test Cihazı: Mobil kamera (1080p)
-
-Kamera Özellikleri
-Desteklenen Kamera Türleri:
-Mobil cihaz kamerası, Bilgisayar web kamerası
-
-Minimum Çözünürlük: 720p
-
-Önerilen Çözünürlük: 1080p
-
-FPS Değeri: 4.92 FPS
-
-👥 Ekip
-Takım lideri : Nursena Albayrak
-
-Mobil Uygulama Geliştirici: Elif Ceren Kuru
-
-Simülasyon : Aylin Şimşek
-
-Model Eğitimi : Feyzanur İnan
-
-🔗 API Kullanımı
-POST /analyze
+#### POST /analyze
 Görüntü analizi için endpoint
 
-URL: http://[server-ip]:8000/analyze
+**URL:** `http://[server-ip]:8000/analyze`
 
-Request:
+**Request:**
+- Method: POST
+- Content-Type: multipart/form-data
+- Body: file (image)
 
-Method: POST
-
-Content-Type: multipart/form-data
-
-Body: file (image)
-
-Response:
-
+**Response:**
 json
-Kopyala
 {
-  "status": "DÜZGÜN/HATALI",
-  "confidence": 0.95,
-  "score": 0.05
+"status": "DÜZGÜN/HATALI",
+"confidence": 0.95,
+"score": 0.05
 }
-⚙️ Kurulum Talimatları
-Web Arayüzü & API
-bash
-Kopyala
-# Repoyu klonlayın
-git clone <repo-url>
-cd <repo-dizin>
 
-# Python bağımlılıklarını yükleyin
-pip install -r requirements.txt
 
-# API'yi başlatın
-python api.py
-
-# Web arayüzünü başlatın
-streamlit run app.py
-Mobil Uygulama
-bash
-Kopyala
-# Flutter SDK'yı yükleyin ve yapılandırın
-
-# Proje dizinine gidin
-cd mobile/
-
-# Bağımlılıkları yükleyin
-flutter pub get
-
-# API adresini lib/config.dart dosyasında güncelleyin
-
-# Uygulamayı başlatın
-flutter run
-📁 Proje Yapısı
-bash
-Kopyala
+### 📁 Proje Yapısı
 manifest/
 ├── web/
-│   ├── app.py                # Web arayüzü
-│   ├── api.py                # REST API
-│   ├── complexity_page.py    # Karmaşıklık analizi
-│   └── requirements.txt      # Python bağımlılıkları
+│ ├── app.py # Web arayüzü
+│ ├── api.py # REST API
+│ ├── complexity_page.py # Karmaşıklık analizi
+│ └── requirements.txt # Python bağımlılıkları
+│
 └── mobile/
-    ├── lib/
-    │   ├── main.dart         # Ana uygulama
-    │   ├── screens/          # Ekranlar
-    │   ├── services/         # API servisleri
-    │   └── widgets/          # UI bileşenleri
-    └── pubspec.yaml          # Flutter bağımlılıkları
-Simülasyon Ortamı
-Python 3.8+ kurulu olmalı
+├── lib/
+│ ├── main.dart # Ana uygulama
+│ ├── screens/ # Ekranlar
+│ ├── services/ # API servisleri
+│ └── widgets/ # UI bileşenleri
+└── pubspec.yaml # Flutter bağımlılıkları
 
-Kamera erişimi olan bir cihaz
 
-En az 4GB RAM
+### 🎥 Demo Video
+[<img src="demo_thumbnail.png" width="50%">](demo_video_link)
 
-CUDA destekli GPU (opsiyonel)
-
-Mobil Uygulama Gereksinimleri
-Flutter SDK
-
-Android Studio / VS Code
-
-Android 6.0+ cihaz
-
-USB Debugging açık olmalı
-
-🎥 Demo Video
 Bu 2 dakikalık demo video:
+- Web arayüzünün kullanımı
+- Mobil uygulamanın kurulumu
+- Gerçek zamanlı analiz örneği
+- API entegrasyonu
+- Performans metrikleri
 
-Web arayüzünün kullanımı
-
-Mobil uygulamanın kurulumu
-
-Gerçek zamanlı analiz örneği
-
-API entegrasyonu
-
-Performans metrikleri
-
-Demo videoyu izlemek için tıklayın
-
-🔍 Test Senaryoları
-Normal ped görüntüsü analizi
-
-Hatalı ped görüntüsü analizi
-
-Farklı ışık koşullarında test
-
-Farklı açılardan test
-
-Stres testi (100 görüntü/dakika)
-
-⚠️ Bilinen Sorunlar
-Çok düşük ışıkta analiz hassasiyeti düşebilir
-
-API'ye aynı anda 100'den fazla istek gelirse yavaşlama olabilir
-
-📱 Desteklenen Platformlar
-Web Arayüzü: Tüm modern tarayıcılar (Chrome, Firefox, Edge)
-
-Mobil Uygulama: Android 6.0 ve üzeri
-
-API: Platform bağımsız
-
-🔜 Gelecek Güncellemeler
-iOS desteği
-
-Offline mod
-
-Toplu analiz özelliği
-
-Detaylı raporlama sistemi
-
-
-
-
-
-
-
-
-
-
+### 🏷️ Proje Detayları
+- Takım Adı: MANIFEST
+- GitHub Etiketi: #ttg5hackathon2025
+- Teslim Tarihi: 22 Mayıs 2025 saat 12:30
+- Klasör: MANIFEST
 
