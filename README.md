@@ -4,6 +4,15 @@
 
 Ped üretim hattında kalite kontrol için yapay zeka destekli görüntü işleme sistemi. Sistem, web arayüzü ve mobil uygulama olmak üzere iki bileşenden oluşmaktadır.
 
+## Ekip Üyeleri
+
+| İsim | Rol | Sorumluluklar |
+|------|-----|---------------|
+| Nursena Albayrak | Takım Lideri | Proje yönetimi, koordinasyon |
+| Feyzanur İnan | Model Geliştirici | ResNet50V2 model eğitimi ve optimizasyonu |
+| Aylin Şimşek | Simülasyon Sorumlusu | Sistem simülasyonu ve test senaryoları |
+| Elif Ceren Kuru | Mobil Geliştirici | Android uygulaması geliştirme |
+
 ### 🌟 Özellikler
 
 #### Web Arayüzü
