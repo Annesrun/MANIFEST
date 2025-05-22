@@ -1,0 +1,7 @@
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.10.5+9
+  tflite: ^1.1.2
+  path_provider: ^2.1.2
+  path: ^1.8.3 

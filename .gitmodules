@@ -1,0 +1,3 @@
+[submodule "MANIFEST"]
+	path = MANIFEST
+	url = https://github.com/Annesrun/MANIFEST.git
